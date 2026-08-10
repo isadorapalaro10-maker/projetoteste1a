@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Juntos Contra o Bullying</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* MENU */
+
+        header {
+            background: #173b57;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 23px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #75d1ff;
+        }
+
+        /* CAPA */
+
+        .inicio {
+            min-height: 620px;
+            background: linear-gradient(
+                135deg,
+                #173b57,
+                #23658c
+            );
+
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .inicio div {
+            max-width: 800px;
+        }
+
+        .inicio h2 {
+            font-size: 58px;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 21px;
+            color: #e5f5ff;
+            margin-bottom: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: #173b57;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background: #d9f2ff;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .titulo h2 {
+            color: #173b57;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* SOBRE */
+
+        .sobre {
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+            border-top: 5px solid #23658c;
+        }
+
+        .card h3 {
+            color: #173b57;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .icone {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* CAUSAS */
+
+        #causas {
+            background: #eef4f8;
+        }
+
+        /* PROBLEMAS */
+
+        .problemas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .problema {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid #d9534f;
+            border-radius: 8px;
+        }
+
+        .problema h3 {
+            color: #b52b28;
+            margin-bottom: 8px;
+        }
+
+        /* SOLUÇÃO PRINCIPAL */
+
+        #solucao {
+            background: #173b57;
+            color: white;
+        }
+
+        #solucao .titulo h2 {
+            color: white;
+        }
+
+        #solucao .titulo p {
+            color: #d8eaf5;
+        }
+
+        .projeto {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            color: #222;
+
+            padding: 40px;
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .projeto h3 {
+            color: #173b57;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .projeto > p {
+            margin-bottom: 30px;
+        }
+
+        .etapas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .etapa {
+            padding: 25px;
+            background: #f1f7fb;
+            border-radius: 10px;
+        }
+
+        .etapa span {
+            display: inline-block;
+            background: #23658c;
+            color: white;
+
+            width: 35px;
+            height: 35px;
+
+            border-radius: 50%;
+
+            text-align: center;
+            line-height: 35px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .etapa h4 {
+            color: #173b57;
+            margin-bottom: 8px;
+        }
+
+        /* PARTICIPAÇÃO */
+
+        .participacao {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .participacao p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .numero {
+            font-size: 55px;
+            font-weight: bold;
+            color: #23658c;
+        }
+
+        /* COMPROMISSO */
+
+        .compromisso {
+            background: #e8f5ec;
+            text-align: center;
+        }
+
+        .compromisso h2 {
+            color: #236b3b;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .compromisso p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 19px;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: #102c40;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #c7d7e2;
+            margin-top: 8px;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .inicio h2 {
+                font-size: 40px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .problemas {
+                grid-template-columns: 1fr;
+            }
+
+            .etapas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- MENU -->
+
+    <header>
+
+        <nav>
+
+            <h1>Juntos Contra o Bullying</h1>
+
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#causas">Causas</a></li>
+                <li><a href="#problemas">Problemas</a></li>
+                <li><a href="#solucao">Soluções</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- INÍCIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div>
+
+            <h2>
+                Uma escola sem bullying
+                começa com todos nós.
+            </h2>
+
+            <p>
+                Projeto de conscientização e prevenção do bullying
+                para estudantes do 1º ao 3º ano do Ensino Médio.
+            </p>
+
+            <a href="#solucao" class="botao">
+                Conheça o projeto
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE O PROJETO -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>Sobre o projeto</h2>
+
+            <p>
+                Educação, respeito e participação para construir
+                um ambiente escolar mais seguro.
+            </p>
+
+        </div>
+
+
+        <div class="sobre">
+
+            <p>
+                Nossa escola estadual possui aproximadamente
+                <strong>500 estudantes</strong>, distribuídos entre
+                o 1º, 2º e 3º ano do Ensino Médio.
+            </p>
+
+            <br>
+
+            <p>
+                Em uma comunidade escolar desse tamanho, é importante
+                que todos saibam identificar, prevenir e combater
+                situações de bullying e cyberbullying.
+            </p>
+
+            <br>
+
+            <p>
+                O objetivo deste projeto é criar uma cultura de
+                respeito, diálogo e acolhimento, envolvendo estudantes,
+                professores, funcionários e famílias.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAUSAS -->
+
+    <section id="causas">
+
+        <div class="titulo">
+
+            <h2>Principais causas</h2>
+
+            <p>
+                O bullying não possui uma única causa. Diversos
+                fatores podem contribuir para o surgimento desse problema.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icone">👥</div>
+
+                <h3>Pressão do grupo</h3>
+
+                <p>
+                    Alguns estudantes podem praticar agressões
+                    para conseguir aprovação, atenção ou aceitação
+                    de outras pessoas.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">💬</div>
+
+                <h3>Falta de diálogo</h3>
+
+                <p>
+                    A ausência de conversas sobre respeito,
+                    diferenças e convivência pode facilitar
+                    conflitos entre estudantes.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">📱</div>
+
+                <h3>Uso inadequado da internet</h3>
+
+                <p>
+                    Redes sociais, grupos de mensagens e jogos
+                    podem ser utilizados para espalhar ofensas,
+                    boatos ou humilhações.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">❤️</div>
+
+                <h3>Falta de empatia</h3>
+
+                <p>
+                    Não compreender ou não considerar os sentimentos
+                    de outras pessoas pode contribuir para atitudes
+                    de desrespeito.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">🏫</div>
+
+                <h3>Falta de prevenção</h3>
+
+                <p>
+                    Quando situações de desrespeito não são
+                    identificadas e enfrentadas, elas podem se repetir
+                    e se tornar mais graves.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">🌎</div>
+
+                <h3>Preconceito</h3>
+
+                <p>
+                    Diferenças de aparência, origem, personalidade,
+                    opiniões ou outras características nunca devem
+                    ser motivo para discriminação.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROBLEMAS -->
+
+    <section id="problemas">
+
+        <div class="titulo">
+
+            <h2>Quais são os problemas?</h2>
+
+            <p>
+                O bullying pode afetar não apenas quem sofre a agressão,
+                mas também toda a comunidade escolar.
+            </p>
+
+        </div>
+
+
+        <div class="problemas">
+
+
+            <div class="problema">
+
+                <h3>📚 Dificuldades na escola</h3>
+
+                <p>
+                    A vítima pode ter dificuldade para se concentrar,
+                    participar das atividades ou frequentar a escola.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>🤝 Isolamento social</h3>
+
+                <p>
+                    A pessoa pode se afastar dos colegas e deixar
+                    de participar de atividades por medo ou insegurança.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>🏫 Ambiente inseguro</h3>
+
+                <p>
+                    Situações de bullying prejudicam o sentimento
+                    de segurança e pertencimento dentro da escola.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>📱 Cyberbullying</h3>
+
+                <p>
+                    Ofensas e humilhações podem continuar fora
+                    da escola através das redes sociais e mensagens.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>😟 Abalo emocional</h3>
+
+                <p>
+                    Situações de humilhação podem afetar a confiança,
+                    o bem-estar e a forma como o estudante se relaciona
+                    com outras pessoas.
+                </p>
+
+            </div>
+
+
+            <div class="problema">
+
+                <h3>⚠️ Convivência prejudicada</h3>
+
+                <p>
+                    Quando o problema não é enfrentado, conflitos
+                    podem aumentar e prejudicar toda a comunidade escolar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOLUÇÃO -->
+
+    <section id="solucao">
+
+        <div class="titulo">
+
+            <h2>Nosso plano de solução</h2>
+
+            <p>
+                Uma proposta que pode envolver os aproximadamente
+                500 estudantes da escola.
+            </p>
+
+        </div>
+
+
+        <div class="projeto">
+
+            <h3>
+                Projeto "Escola que Respeita"
+            </h3>
+
+            <p>
+                A proposta é criar uma campanha permanente de
+                prevenção ao bullying, com participação dos alunos,
+                professores e funcionários.
+            </p>
+
+
+            <div class="etapas">
+
+
+                <div class="etapa">
+
+                    <span>1</span>
+
+                    <h4>Semana de conscientização</h4>
+
+                    <p>
+                        Realizar palestras, rodas de conversa e
+                        atividades sobre bullying, cyberbullying,
+                        empatia e respeito.
+                    </p>
+
+                </div>
+
+
+                <div class="etapa">
+
+                    <span>2</span>
+
+                    <h4>Caixa de relatos</h4>
+
+                    <p>
+                        Disponibilizar um canal seguro para que
+                        estudantes possam comunicar situações de
+                        bullying e pedir ajuda.
+                    </p>
+
+                </div>
+
+
+                <div class="etapa">
+
+                    <span>3</span>
+
+                    <h4>Alunos multiplicadores</h4>
+
+                    <p>
+                        Formar representantes de cada turma para
+                        ajudar na divulgação das ações de prevenção
+                        e respeito.
+                    </p>
+
+                </div>
+
+
+                <div class="etapa">
+
+                    <span>4</span>
+
+                    <h4>Campanha digital</h4>
+
+                    <p>
+                        Criar cartazes, vídeos e publicações educativas
+                        para conscientizar sobre o uso responsável
+                        das redes sociais.
+                    </p>
+
+                </div>
+
+
+                <div class="etapa">
+
+                    <span>5</span>
+
+                    <h4>Mediação e acolhimento</h4>
+
+                    <p>
+                        Encaminhar situações identificadas à equipe
+                        responsável da escola, garantindo escuta,
+                        orientação e acompanhamento.
+                    </p>
+
+                </div>
+
+
+                <div class="etapa">
+
+                    <span>6</span>
+
+                    <h4>Acompanhamento</h4>
+
+                    <p>
+                        Realizar pesquisas periódicas com os alunos
+                        para avaliar o ambiente escolar e identificar
+                        novos problemas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTICIPAÇÃO -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>Todos podem participar</h2>
+
+            <p>
+                Combater o bullying é uma responsabilidade coletiva.
+            </p>
+
+        </div>
+
+
+        <div class="participacao">
+
+            <div class="numero">500+</div>
+
+            <h3>estudantes formando uma comunidade</h3>
+
+            <br>
+
+            <p>
+                Cada aluno pode contribuir para uma escola melhor:
+                respeitando as diferenças, não compartilhando
+                humilhações, apoiando colegas e procurando ajuda
+                quando necessário.
+            </p>
+
+            <p>
+                Professores, funcionários e famílias também possuem
+                um papel importante na prevenção e no acolhimento.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPROMISSO -->
+
+    <section class="compromisso">
+
+        <h2>
+            Respeito não é brincadeira.
+        </h2>
+
+        <p>
+            Uma piada deixa de ser brincadeira quando machuca,
+            humilha ou exclui alguém. Antes de falar, publicar
+            ou compartilhar algo, pense no impacto que sua atitude
+            pode causar.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                Se você presencia uma situação de bullying,
+                não participe. Procure ajuda de um adulto de confiança
+                e apoie quem está passando por isso.
+            </strong>
+        </p>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <h3>Juntos Contra o Bullying</h3>
+
+        <p>
+            Projeto de Educação Digital — Ensino Médio
+        </p>
+
+        <p>
+            1º, 2º e 3º ano | Escola Estadual
+        </p>
+
+        <p>
+            Educação • Respeito • Empatia • Inclusão
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
